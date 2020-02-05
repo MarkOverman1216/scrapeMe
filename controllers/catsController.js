@@ -82,16 +82,25 @@ router.get("/scrape", function (req, res) {
         .children("a")
         .attr("href");
 
-      // Create a new Article using the `result` object built from scraping
-      db.Article.create(result)
-        .then(function (dbArticle) {
-          // View the added result in the console
-          console.log(dbArticle);
-        })
-        .catch(function (err) {
-          // If an error occurred, log it
-          console.log(err);
+
+      db.Article.findOne({ title: result.title }) //products[i].title
+        .then(results => { //update products with results
+          console.log(results)
+          if (!results) {
+            // Create a new Article using the `result` object built from scraping
+            db.Article.create(result)
+              .then(function (dbArticle) {
+                // View the added result in the console
+                console.log(dbArticle);
+              })
+              .catch(function (err) {
+                // If an error occurred, log it
+                console.log(err);
+              });
+          }
         });
+
+
     });
 
     // Send a message to the client
