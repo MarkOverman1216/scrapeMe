@@ -1,12 +1,12 @@
-<h1>Cats!</h1>
+<h1>Don't mind anything on this page, go to /scrape to scrape and then /articles to look at those!</h1>
 
 <h2>Cats that are not sleepy!</h2>
 
 <ul>
   {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
+  {{#unless sleepy}}
+  {{> cats/cat-block sleep=true}}
+  {{/unless}}
   {{/each}}
 </ul>
 
@@ -14,9 +14,9 @@
 
 <ul>
   {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
+  {{#if sleepy}}
+  {{> cats/cat-block sleep=false}}
+  {{/if}}
   {{/each}}
 </ul>
 

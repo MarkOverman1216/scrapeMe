@@ -1,7 +1,18 @@
+<div id="articles">
+
+</div>
+<div id="notes"></div>
 <ul>
   {{#each dbArticle}}
-  <li>
+
+  <p data-id="{{this._id}}">
+    {{this.title}}
+    <br />
+    {{this.link}}
+  </p>
+  {{!-- <li>
     <a href="{{this.link}}">{{this.title}}</a>
-  </li>
+  </li> --}}
   {{/each}}
 </ul>
+<script src="/assets/js/articles.js"></script>
